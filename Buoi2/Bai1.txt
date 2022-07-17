@@ -1,0 +1,46 @@
+package BaiTap;
+
+import java.util.Scanner;
+
+public class Bai1 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int a, b;
+		System.out.print( "Thang: " );
+		a = scanner.nextInt();
+		System.out.print( "Ngay: " );
+		b = scanner.nextInt();
+		if((b >= 20 && b <= 31 && a == 1) || (b >= 1 && b <= 18 && a == 2)){
+			System.out.println( "Cung Bao Binh" );
+		}else if((b >= 19 && b <= 29 && a == 2) || (b >= 1 && b <= 20 && a == 3)) {
+			System.out.println( "Cung Song Ngu" );
+		}else if((b >= 21 && b <= 31 && a == 3) || (b >= 1 && b <= 20 && a == 4)) {
+			System.out.println( "Cung Bach Duong" );
+		}else if((b >= 21 && b <= 30 && a == 4) || (b >= 1 && b <= 20 && a == 5)) {
+			System.out.println( "Cung Kim Nguu" );
+		}else if((b >= 21 && b <= 31 && a == 5) || (b >= 1 && b <= 21 && a == 6)) {
+			System.out.println( "Cung Song Tu" );
+		}else if((b >= 22 && b <= 30 && a == 6) || (b >= 1 && b <= 22 && a == 7)) {
+			System.out.println( "Cung Cu Giai" );
+		}else if((b >= 23 && b <= 31 && a == 7) || (b >= 1 && b <= 22 && a == 8)) {
+			System.out.println( "Cung Su Tu" );
+		}else if((b >= 23 && b <= 31 && a == 8) || (b >= 1 && b <= 22 && a == 9)) {
+			System.out.println( "Cung Xu Nu" );
+		}else if((b >= 23 && b <= 30 && a == 9) || (b >= 1 && b <= 23 && a == 10)) {
+			System.out.println( "Cung Thien Binh" );
+		}else if((b >= 24 && b <= 31 && a == 10) || (b >= 1 && b <= 22 && a == 11)) {
+			System.out.println( "Cung Bo Cap" );
+		}else if((b >= 23 && b <= 30 && a == 11) || (b >= 1 && b <= 21 && a == 12)) {
+			System.out.println( "Cung Nhan Ma" );
+		}else if((b >= 22 && b <= 31 && a == 12) || (b >= 1 && b <= 19 && a == 1)) {
+			System.out.println( "Cung Ma Ket" );
+		}
+	}
+}
+
+
+
+
+
+
+

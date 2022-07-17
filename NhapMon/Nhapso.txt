@@ -1,0 +1,40 @@
+package NhapMon;
+
+import java.util.Scanner;
+
+public class Nhapso {
+	public static void main(String[] args) {
+//  In ra màn hình
+		System.out.println("My name is HP");   //println: Xu?ng dòng
+		                                       //print ho?c printf: Không xu?ng dòng 
+//  Nhap: Scanner
+	Scanner scanner = new Scanner(System.in);
+	int n;
+	System.out.print("Nhap n= ");
+	n = scanner.nextInt();
+	System.out.println("n = " + n );
+	
+	float a;
+	System.out.print("Nhap a= ");
+	a = scanner.nextFloat();
+	System.out.println("a = " + a );
+	
+//  Ép ki?u:
+	float y;
+	y = (float)n;
+	System.out.println("y = " + y );
+	
+//  Tính toán:
+	System.out.println("Tong = " + (a+n));
+	}
+}
+
+
+
+
+
+
+
+
+
+

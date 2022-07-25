@@ -1,0 +1,99 @@
+package Buoi3;
+
+import java.util.Scanner;
+
+public class BTVN1 {
+	public static void Nhap(int a[], int n) {
+		Scanner scanner = new Scanner(System.in);
+		for(int i = 0; i < n; i++ ) {
+			System.out.print("Nhap a[" + i + "] = " );
+			a[i] = scanner.nextInt();
+		}
+	}
+	public static void Xuat(int a[], int n) {
+		for(int i = 0; i < n; i++) {
+			System.out.print( a[i] + " ");
+		}
+	}
+	public static void TBC(int a[], int n) {
+		int tong = 0, dem = 0;
+		float TBC;
+		for(int i = 0; i < n; i++) {
+			if(a[i] % 2 != 0 && i % 2 == 0) {
+				tong += a[i];
+				dem++;
+			}
+		}
+		if(dem != 0) {
+			TBC = (float)tong/dem;
+			System.out.println("\nTBC so le o vi tri chan la: " + TBC);
+		}
+	}
+	public static void VTMin(int a[], int n){
+		int VTMin = 0;
+		for(int i = 1; i < n ;i ++) {
+			if(a[VTMin] > a[i]) {
+				VTMin = i;
+			}
+		}
+		System.out.println("VTMin trong mang la: " + VTMin);
+	}
+	public static boolean CheckSCP(int n){
+		int a = (int)Math.sqrt(n);
+		if(a * a == n) {
+			return true;
+		}
+		return false;
+	}
+	public static void SCP(int a[], int n){
+		System.out.print("So chinh phuong trong mang la: ");
+		for(int i = 0; i < n ; i++) {
+			if(CheckSCP(a[i])) {
+				System.out.print(a[i] + " ");
+			}
+		}
+	}
+	public static boolean CheckSNT(int n){
+		for(int i = 2; i < n; i++) {
+			if(n % i == 0) {
+				return false;
+			}
+		}
+		return n > 1;
+	}
+	public static void SNT(int a[], int n){
+		System.out.print("\nSo nguyen to trong mang la: ");
+		for(int i = 0; i < n; i++) {
+			if(CheckSNT(a[i])) {
+				System.out.print(a[i] + " ");
+			}
+		}
+	}
+	public static void TangDan(int a[], int n){
+		for(int i = 0 ;i < n; i++) {
+			for(int j = i+1 ; j < n ; j++) {
+				if(a[i] > a[j]) {
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+		System.out.println(" ");
+		Xuat(a,n);
+	}
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int n;
+		System.out.print("Nhap n= ");
+		n = scanner.nextInt();
+		int[] a = new int [100];
+		Nhap(a,n);
+		Xuat(a,n);
+		TBC(a,n);
+		VTMin(a,n);
+		SCP(a,n);
+		SNT(a,n);
+		TangDan(a,n);
+	}
+}

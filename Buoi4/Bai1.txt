@@ -1,0 +1,61 @@
+package Bai1;
+
+import java.util.Scanner;
+
+public class HinhChuNhat {
+	private static Scanner scanner = new Scanner(System.in);
+	private int chieuDai;
+	private int chieuRong;
+	private int chuVi;
+	private int dienTich;
+	
+	public void setChieuDai(int Dai) {
+		this.chieuDai = Dai;
+	}
+	public int getChieuDai() {
+		return chieuDai;
+	}
+	
+	public void setChieuRong(int Rong) {
+		this.chieuRong = Rong;
+	}
+	public int getChieuRong() {
+		return chieuRong;
+	}
+	
+	public void input(String s) {
+		System.out.print("Chieu dai " + s + " la: ");
+		chieuDai = scanner.nextInt();
+		System.out.print("Chieu rong " + s + " la: ");
+		chieuRong = scanner.nextInt();
+	}
+	public void output(String s) {
+		chuVi = (chieuDai + chieuRong) * 2;
+		dienTich = chieuDai * chieuRong;
+		System.out.println("Chu vi " + s + " la: " + chuVi);
+		System.out.println("Dien tich " + s + " la: " + dienTich);
+	}
+	
+	public static void main(String[] args) {
+		HinhChuNhat a = new HinhChuNhat();
+		a.input("HCN a");
+		a.output("HCN a");
+		
+		System.out.println("------------------------------");
+		HinhChuNhat b = new HinhChuNhat();
+		b.setChieuDai(12);
+		b.setChieuRong(5);
+		System.out.println("Chieu rong HCN b la: " + b.getChieuRong());
+		System.out.println("Chieu dai HCN b la: " + b.getChieuDai());
+		b.output("HCN b");
+		
+		System.out.println("------------------------------");
+		int DTa = a.getChieuDai()*a.getChieuRong();
+		int DTb = b.getChieuDai()*b.getChieuRong();
+		if(DTa > DTb) {
+			System.out.println("Dien tich HCN a lon hon");
+		}else {
+			System.out.println("Dien tich HCN b lon hon");
+		}
+	}
+}

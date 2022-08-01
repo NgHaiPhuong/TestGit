@@ -1,0 +1,46 @@
+package Bai3;
+
+import java.util.Scanner;
+
+public class PhuongTrinhBac2 {
+	private static Scanner scanner = new Scanner(System.in);
+	private static float a;
+	private static float b;
+	private static float c;
+	
+	public void input() {
+		System.out.print("a= ");
+		a = scanner.nextFloat();
+		System.out.print("b= ");
+		b = scanner.nextFloat();
+		System.out.print("c= ");
+		c = scanner.nextFloat();
+	}
+	
+	public void tinhNghiem(float a, float b, float c) {
+		float x1, x2;
+		float delta = b*b - 4*a*c;
+		if(a == 0) {
+			if(b == 0) {
+				System.out.println("Phuong trinh vo nghiem");
+			}else {
+				System.out.println("Phuong trinh co 1 nghiem x = " + (-c/b));
+			}
+		}else {
+			if(delta == 0) {
+				System.out.println("Phuong trinh co nghiem kep x= " + (-b/(2*a)));
+			}else if(delta > 0) {
+				x1 = (float)((-b + Math.sqrt(delta)) / (2*a));
+				x2 = (float)((-b - Math.sqrt(delta)) / (2*a));
+				System.out.println("Phuong trinh co 2 nghiem x1 = " + x1 + " va x2 = " + x2);
+			}else {
+				System.out.println("Phuong trinh vo nghiem");
+			}
+		}
+	}
+	public static void main(String[] args) {
+		PhuongTrinhBac2 PtBac2 = new PhuongTrinhBac2();
+		PtBac2.input();
+		PtBac2.tinhNghiem(a,b,c);
+	}
+}

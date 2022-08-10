@@ -1,0 +1,24 @@
+package Bai3;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		isPrime kt = new isPrime();
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Nhap a: ");
+		int a = sc.nextInt();
+		System.out.print("Nhap b: ");
+		long b = sc.nextLong();
+		System.out.print("Nhap c: ");
+		float c = sc.nextFloat();
+		System.out.print("Nhap d: ");
+		double d = sc.nextDouble();
+		
+		System.out.println(kt.isPrime(a));
+		System.out.println(kt.isPrime(b));
+		System.out.println(kt.isPrime(c));
+		System.out.println(kt.isPrime(d));
+	}
+}

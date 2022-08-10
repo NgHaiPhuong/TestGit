@@ -1,0 +1,43 @@
+package Bai1;
+
+import java.util.Scanner;
+
+public class PhongMay {
+	private int maPhong;
+	private String tenPhong;
+	private May may = new May();
+	private QuanLy quanly = new QuanLy();
+	
+	public void input() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Ma phong: ");
+		maPhong = scanner.nextInt();
+		
+		scanner.nextLine();
+		
+		System.out.print("Ten phong: ");
+		tenPhong = scanner.nextLine();
+		may.input();
+		quanly.input();
+	}
+	
+	public void output() {
+		System.out.printf("%-10s%-10s\n", "Ma phong", "Ten phong");
+		System.out.printf("%-10d%-10s\n", maPhong , tenPhong);
+		may.output();
+		quanly.output();
+	}
+	
+	public static void main(String[] args) {
+		PhongMay a = new PhongMay();
+		a.input();
+		a.output();
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+package Arraylist;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public class list {
+	public static void main(String[] args) {
+// Cách 1
+		ArrayList<String> list= new ArrayList<String>(20);
+		list.add("Java");
+        list.add("C++");
+        list.add("PHP");
+        list.add("Java");
+        // hi?n th? các ph?n t? c?a list
+        System.out.println("Các phan tu có trong list là: ");
+        System.out.println(list);     
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+        for (String str : list) {
+            System.out.println(str);
+        }
+     // s? d?ng ListIterator - hi?n th? các ph?n t? c?a list
+        ListIterator<String> kq = list.listIterator();
+        System.out.println("\nCác ph?n t? có trong list là: ");
+        while (kq.hasNext()) {
+            System.out.println(kq.next());
+        }
+      
+// Cách 2
+      ArrayList listLanguages = new ArrayList();
+ 
+        // them phan tu vao array list
+        listLanguages.add("Java");
+        listLanguages.add("Python");
+        listLanguages.add("PHP");
+        listLanguages.add(".NET");
+        listLanguages.add("C");
+        listLanguages.add("C++");
+        
+        System.out.println("\n" + listLanguages);
+        // su dung iterator de hien thi noi dung cua listLanguages
+        System.out.println("Danh sach ngon ngu lap trinh: ");
+        Iterator itr = listLanguages.iterator();
+        while (itr.hasNext()) {
+            Object element = itr.next();
+            System.out.println(element);
+        }
+        System.out.println();
+ 
+        // sua cac phan tu duoc lap
+        ListIterator litr = listLanguages.listIterator();
+        while (litr.hasNext()) {
+            Object element = litr.next();
+            litr.set(element + " (PASS)");
+        }
+        System.out.println("Noi dung da duoc sua cua listLanguages: ");
+        itr = listLanguages.iterator();
+        while (itr.hasNext()) {
+            Object element = itr.next();
+            System.out.println(element);
+        }
+        System.out.println();
+ 
+        // hien thi cac phan tu theo thu tu nguoc lai
+        System.out.println("Noi dung da duoc sua cua listLanguages "
+                + "theo thu tu nguoc lai: ");
+        while (litr.hasPrevious()) {
+            Object element = litr.previous();
+            System.out.println(element);
+        }
+        System.out.println();
+         
+        // xoa phan tu C (PASS)
+        litr = listLanguages.listIterator();
+        while (litr.hasNext()) {
+            Object element = litr.next();
+            if ("C (PASS)".equals(element)) {
+             litr.remove();
+            }
+        }
+        System.out.println("Noi dung da duoc sua cua listLanguages: ");
+        itr = listLanguages.iterator();
+        while (itr.hasNext()) {
+            Object element = itr.next();
+            System.out.println(element);
+        }
+        System.out.println();
+        
+        // Xóa phan tu Java (PASS)
+        listLanguages.remove("Java (PASS)");
+        System.out.print("Xoa phan tu Java (PASS): ");
+        System.out.println(listLanguages);
+         
+	}
+}

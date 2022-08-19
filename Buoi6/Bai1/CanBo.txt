@@ -1,0 +1,50 @@
+package Bai1;
+
+import java.util.Scanner;
+
+public class CanBo {
+	private static Scanner sc = new Scanner(System.in);
+	private int id;
+	private String name;
+	private int birthday;
+	private String gioiTinh;
+	private String address;
+	
+	public CanBo(int id, String name, int birthday, String gioiTinh, String address) {
+		this.id = id;
+		this.address = address;
+		this.name = name;
+		this.gioiTinh = gioiTinh;
+		this.birthday = birthday;
+	}
+	
+	CanBo(){
+		
+	}
+	public void input() {
+		System.out.print("id: ");
+		id = sc.nextInt();
+		System.out.print("nam sinh: ");
+		birthday = sc.nextInt();
+		sc.nextLine();
+		System.out.print("ten: ");
+		name = sc.nextLine();
+		System.out.print("gioi tinh: ");
+		gioiTinh = sc.nextLine();
+		System.out.print("dia chi: ");
+		address = sc.nextLine();
+	}
+	public void output(String b) {
+		System.out.printf("%-10d%-10s%-10d%-10s%-10s%-10s\n", id, name, birthday, gioiTinh, address, b);
+	}
+	public int getID(){
+		return id;
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+package Bai2;
+
+public class Main {
+	public static void Giam(ThongTinXe a[]) {
+		ThongTinXe temp;
+		for(int i = 0 ; i <  3 ; i ++) {
+			for(int j = i + 1; j < 3 ; j++) {
+				if(a[i].getThue() < a[j].getThue()) {
+					temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+	}
+	
+	public static void Tang(ThongTinXe a[]) {
+		ThongTinXe temp;
+		for(int i = 0 ; i < 3 ; i++) {
+			for(int j = i + 1 ; j < 3 ; j++) {
+				if(a[i].getThue() > a[j].getThue()) {
+					temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+	}
+	
+	public static void Xuat(ThongTinXe a[]) {
+		for(int i = 0 ; i < 3 ;i++) {
+			a[i].output();
+		}
+	}
+	
+	public static void main(String[] args) {
+		ThongTinXe[] xe = new ThongTinXe[3];
+		for(int i = 0 ; i < 3 ; i++) {
+			xe[i] = new ThongTinXe();
+		}
+		xe[0].setTen(1);
+		xe[0].setLoaiXe(1);
+		xe[0].setDungTich(100);
+		xe[0].setGia(50000000);
+		
+		xe[1].setTen(2);
+		xe[1].setLoaiXe(2);
+		xe[1].setDungTich(50);
+		xe[1].setGia(25000000);
+		
+		xe[2].setTen(3);
+		xe[2].setLoaiXe(3);
+		xe[2].setDungTich(300);
+		xe[2].setGia(1000000000);
+
+//		long number = Double.valueOf("2.5E7").longValue();
+//		System.out.println(number);
+		for(int i = 0 ; i < 3 ; i ++) {
+			if(xe[i].getDungTich() < 100) {
+				float a = (float)2/100;
+				long tien = (long)((long)xe[i].getGia()*a);
+				xe[i].setThue(tien);
+			}else if(xe[i].getDungTich() > 200) {
+				float a = (float)10/100;
+				long tien = (long)((long)xe[i].getGia()*a);
+				xe[i].setThue(tien);
+			}else {
+				float a = (float)6/100;
+				long tien = (long)((long)xe[i].getGia()*a);
+				xe[i].setThue(tien);
+			}
+		}		
+//  Bang thong tin:
+		System.out.printf("%-13s%-10s%-13s%-13s%-10s\n", "Ten chu xe", "Loai xe", "Dung tich", "Gia xe", "Thue phai tra");
+		Xuat(xe);
+// Giam thue
+		System.out.println("==========Bang xe sap xep theo thue giam dan================");
+		Giam(xe);
+		System.out.printf("%-13s%-10s%-13s%-13s%-10s\n", "Ten chu xe", "Loai xe", "Dung tich", "Gia xe", "Thue phai tra");
+		Xuat(xe);
+// Tang thue
+		System.out.println("==========Bang xe sap xep theo thue tang dan================");
+		Tang(xe);
+		System.out.printf("%-13s%-10s%-13s%-13s%-10s\n", "Ten chu xe", "Loai xe", "Dung tich", "Gia xe", "Thue phai tra");
+		Xuat(xe);
+	}
+}

@@ -1,0 +1,13 @@
+package Bai1;
+
+public class KySu extends CanBo{
+	private String nganh;
+	KySu(String nganh){
+		System.out.println("Nhap thong tin ve cac ky su la: ");
+		this.nganh = nganh;
+		super.input();
+		System.out.println("Bang thong tin ve ki su");
+		System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s\n", "id", "ten", "namsinh", "gioitinh","diachi", "nganhhoc");
+		output(nganh);
+	}
+}

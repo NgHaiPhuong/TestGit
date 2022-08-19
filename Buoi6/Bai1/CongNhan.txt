@@ -1,0 +1,15 @@
+package Bai1;
+
+public class CongNhan extends CanBo{
+	private String Bac;
+	
+	public CongNhan(String bac) {
+		System.out.println("Nhap thong tin ve cong nhan la: ");
+//		super();
+		this.Bac = bac;
+		input(); // super.input();
+		System.out.println("Bang thong tin cong nhan: ");
+		System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s\n", "id", "ten", "namsinh", "gioitinh","diachi", "Bac");
+		output(bac);
+	}
+}

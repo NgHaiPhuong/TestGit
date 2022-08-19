@@ -1,0 +1,48 @@
+package Bai2;
+
+public class ThongTinXe {
+	private int tenChu;
+	private int loaiXe;
+	private int dungTich;
+	private long gia;
+	private long thue;
+//	
+	public void setTen(int ten) {
+		this.tenChu = ten;
+	}
+	public int getTen() {
+		return tenChu;
+	}
+//	
+	public void setLoaiXe(int loai) {
+		this.loaiXe = loai;
+	}
+	public int getLoaiXe() {
+		return loaiXe;
+	}
+//	
+	public void setDungTich(int dungTich) {
+		this.dungTich = dungTich;
+	}
+	public int getDungTich() {
+		return dungTich;
+	}
+//	
+	public void setGia(long gia) {
+		this.gia = gia;
+	}
+	public long getGia() {
+		return gia;
+	}
+//
+	public void setThue(long thue) {
+		this.thue = thue;
+	}
+	public long getThue() {
+		return thue;
+	}
+//
+	public void output() {
+		System.out.printf("%-13s%-10s%-13s%-13s%-10s\n", tenChu, loaiXe, dungTich, gia, thue);
+	}
+}

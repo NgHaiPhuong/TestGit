@@ -1,0 +1,101 @@
+package Bai1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	public static void Xuat(ArrayList<SinhVien> list) {
+		System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", "maSV","Khoahoc", "Ten", "tuoi", "MaLop", "TenLop", "Que", "Khoa");
+		for(int i = 0 ; i < list.size() ; i++) {
+			list.get(i).output();
+		}
+	}
+	
+	public static void Sua(ArrayList<SinhVien> list) {
+		for(int i = 0 ; i < list.size() ; i++) {
+			if(list.get(i).getKhoa().equals("QTKD")) {
+				list.get(i).setKhoa("CNTT");
+			}
+		}
+	}
+	
+	public static void Giam(ArrayList<SinhVien> list) {
+		ArrayList<SinhVien> sv = new ArrayList<SinhVien>();
+		sv.add(null);
+		for(int i = 0 ; i < list.size() ; i++) {
+			for(int j = i + 1 ; j < list.size() ; j++) {
+				if(list.get(i).getKhoaHoc() < list.get(j).getKhoaHoc()) {
+					sv.set(0, list.get(i));
+					list.set(i, list.get(j));
+					list.set(j, sv.get(0));
+				}
+			}
+		}
+	}
+	
+	public static void Tang(ArrayList<SinhVien> list) {
+		ArrayList<SinhVien> sv = new ArrayList<SinhVien>();
+		sv.add(null);
+		for(int i = 0 ; i < list.size() ; i++) {
+			for(int j = i + 1 ; j < list.size() ; j++) {
+				if(list.get(i).getKhoaHoc() > list.get(j).getKhoaHoc()) {
+					sv.set(0, list.get(i));
+					list.set(i, list.get(j));
+					list.set(j, sv.get(0));
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		SinhVien sv1 = new SinhVien(1, "CNTT", 16, "A", 19, "HaiPhong", 1, "KTPM04");
+		SinhVien sv2 = new SinhVien(2, "QTKD", 17, "B", 19, "Ha Nam", 2, "KTKD07");
+		SinhVien sv3 = new SinhVien(3, "Co Khi", 14, "C", 20, "Nghe An", 3, "CK04");
+		SinhVien sv4 = new SinhVien(4, "Dien", 13, "D", 22, "Nam Dinh", 4, "Dien02");
+		SinhVien sv5 = new SinhVien(5, "CNTT", 19, "E", 18, "Thanh Hoa", 5, "HTTT01");
+		
+		ArrayList<SinhVien> list = new ArrayList<SinhVien>();
+		list.add(sv1);
+		list.add(sv2);
+		list.add(sv3);
+		list.add(sv4);
+		list.add(sv5);
+		
+		Xuat(list);
+// Xoa SV theo maSV
+		System.out.println("==============Bang thong tin sau khi xoa SV theo ma=============");
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Ma can xoa la: ");
+		int ma = sc.nextInt();
+		for(int i = 0 ; i < list.size() ; i++) {
+			if(list.get(i).getMaSV() == ma) {
+				list.remove(i);
+			}
+		}
+		Xuat(list);
+// Sua GTKD thanh CNTT
+		System.out.println("==============Bang thong tin sau khi sua=======================");
+		Sua(list);
+		Xuat(list);
+// Giam
+		System.out.println("==============Bang thong tin giam theo khoa=======================");
+		Giam(list);
+		Xuat(list);
+// Tang
+		System.out.println("==============Bang thong tin tang theo khoa=======================");
+		Tang(list);
+		Xuat(list);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

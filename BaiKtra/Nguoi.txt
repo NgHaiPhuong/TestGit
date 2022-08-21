@@ -1,0 +1,10 @@
+package Bai1;
+
+public class Nguoi {
+	public String hoTen;
+	public int tuoi;
+	public String que;
+	Nguoi(){
+		
+	}
+}

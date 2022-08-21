@@ -1,0 +1,9 @@
+package Bai1;
+
+public class LopHoc {
+	public int maLop;
+	public String tenLop;
+	LopHoc(){
+		
+	}
+}

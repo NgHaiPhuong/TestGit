@@ -1,0 +1,36 @@
+package Bai1;
+
+public class SinhVien extends Nguoi{
+	private int maSV; 
+	private String khoa;
+	private int khoaHoc;
+	private LopHoc lop = new LopHoc();
+	SinhVien(int maSV, String khoa, int khoaHoc, String hoTen, int tuoi, String que, int maLop, String tenLop){
+		this.maSV = maSV;
+		this.khoa = khoa;
+		this.khoaHoc = khoaHoc;
+		this.hoTen = hoTen;
+		this.que = que;
+		this.tuoi = tuoi;
+		this.lop.maLop = maLop;
+		this.lop.tenLop = tenLop;
+	}
+	public int getMaSV() {
+		return maSV;
+	}
+	public void setKhoaHoc(int khoaHoc) {
+		this.khoaHoc = khoaHoc;
+	}
+	public int getKhoaHoc() {
+		return khoaHoc;
+	}
+	public void setKhoa(String khoa) {
+		this.khoa = khoa;
+	}
+	public String getKhoa() {
+		return khoa;
+	}
+	public void output() {
+		System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", maSV, khoaHoc,hoTen, tuoi, lop.maLop , lop.tenLop, que, khoa);
+	}
+}

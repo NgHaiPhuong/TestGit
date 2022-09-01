@@ -1,0 +1,26 @@
+package QlyNhanSu;
+
+public class NhanSu extends Nguoi {
+	private int maNV;
+	private BacLuong bac = new BacLuong();
+	private int soCCCD;
+	private String ngheNghiep;
+	NhanSu(int maNV, String hoTen, int ngaySinh, String gioiTinh, String bac, int soCCCD, String nghe){
+		this.maNV = maNV;
+		this.ngheNghiep = nghe;
+		this.hoTen = hoTen;
+		this.ngaySinh = ngaySinh;
+		this.gioiTinh = gioiTinh;
+		this.bac.bac = bac;
+		this.soCCCD = soCCCD;
+	}
+	public int getMaNv() {
+		return maNV;
+	}
+	public void nhapNgheNghiep(String nghe) {
+		this.ngheNghiep = nghe;
+	}
+	public void output() {
+		System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", maNV, hoTen, ngaySinh, gioiTinh, bac.bac , soCCCD, ngheNghiep);
+	}
+}

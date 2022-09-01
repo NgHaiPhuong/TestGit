@@ -1,0 +1,13 @@
+package QlyNhanSu;
+
+public class Nguoi {
+	public String hoTen;
+	public int ngaySinh;
+	public String gioiTinh;
+	Nguoi(){
+		
+	}
+	public int getNgaySinh() {
+		return ngaySinh;
+	}
+}

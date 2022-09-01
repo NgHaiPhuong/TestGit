@@ -1,0 +1,80 @@
+package QlyNhanSu;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class RunMain {
+	private static Scanner sc = new Scanner(System.in);
+	
+	public static void xuat(ArrayList<NhanSu> list) {
+		System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", "maNV", "hoTen", "ngaySinh", "gioiTinh", "bacluong", "soCCCD", "ngheNghiep");
+		for(int i = 0 ; i < list.size() ; i++) {
+			list.get(i).output();
+		}
+		System.out.println();
+	}
+	
+	public static void tim(ArrayList<NhanSu> list) {
+		System.out.print("Nhap maNV can tim la: ");
+		int id = sc.nextInt();
+		System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", "maNV", "hoTen", "ngaySinh", "gioiTinh", "bacluong", "soCCCD", "ngheNghiep");
+		for(int i = 0 ; i < list.size() ; i++) {
+			if(list.get(i).getMaNv() == id) {
+				list.get(i).output();
+			}
+		}
+	}
+	
+	public static void tangDan(ArrayList<NhanSu> list) {
+		ArrayList<NhanSu> kt = new ArrayList<NhanSu>();
+		kt.add(null);
+		for(int i = 0 ; i < list.size() ; i++) {
+			for(int j = i + 1 ; j < list.size() ; j++) {
+				if(list.get(i).getNgaySinh() > list.get(j).getNgaySinh()) {
+					kt.set(0, list.get(i));
+					list.set(i, list.get(j));
+					list.set(j, kt.get(0));
+				}
+			}
+		}
+	}
+	
+	public static void xoa(ArrayList<NhanSu> list) {
+		System.out.print("Nhap ma NV cam xoa la: ");
+		int id = sc.nextInt();
+		for(int i = 0 ; i < list.size() ; i++) {
+			if(list.get(i).getMaNv() == id) {
+				list.remove(i);
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		ArrayList<NhanSu> list = new ArrayList<NhanSu>();
+		
+		NhanSu ns1 = new NhanSu(1,"A",27,"Nu","1",027,"Ki su phan mem");
+		NhanSu ns2 = new NhanSu(2,"B",16,"Nam","2",034,"Lap trinh vien");
+		NhanSu ns3 = new NhanSu(3,"C",11,"Nam","3",011,"Kinh te quoc te");
+		NhanSu ns4 = new NhanSu(4,"D",20,"Nu","4",012,"Ke toan");
+		
+		list.add(ns1);
+		list.add(ns2);
+		list.add(ns3);
+		list.add(ns4);
+		
+// Nhap xuat thong tin 
+		xuat(list);
+// Tim kiem NV theo maNV
+		System.out.println("=======Tim NV theo ma NV========================");
+		tim(list);
+// Xoa NV theo maNV
+		System.out.println("\n=======Bang NV sau khi xoa NV theo maNV==========");
+		xoa(list);
+		xuat(list);
+// Sap xep tang dan theo ngay sinh
+		System.out.println("=======Bang NV sap xep tang dan ngay sinh===========");
+		tangDan(list);
+		xuat(list);
+	}
+}
+

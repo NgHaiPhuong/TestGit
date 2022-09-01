@@ -1,0 +1,8 @@
+package QlyNhanSu;
+
+public class BacLuong {
+	public String bac;
+	BacLuong(){
+		
+	}
+}
